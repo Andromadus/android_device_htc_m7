@@ -23,6 +23,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 
 TARGET_PREBUILT_KERNEL := device/htc/m7/prebuilt/kernel
+#TARGET_KERNEL_CONFIG := m7_defconfig
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_INITRC := device/htc/m7/recovery/init.rc
