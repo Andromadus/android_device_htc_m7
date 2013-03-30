@@ -1,9 +1,11 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/htc/m7/BoardConfigVendor.mk
+-include vendor/htc/m7/BoardConfigVendor.mk 
 
-# Platform
+# inherit from common msm8960
+-include device/htc/msm8960-common/BoardConfigCommon.mk
+
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
@@ -20,20 +22,20 @@ BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
 
-# fix this up by examining /proc/mtd on a running device
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1946156032
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 27917287424
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-TARGET_PREBUILT_KERNEL := device/htc/m7/kernel
+TARGET_PREBUILT_KERNEL := device/htc/m7/prebuilt/kernel
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 TARGET_RECOVERY_INITRC := device/htc/m7/recovery/init.rc
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m7/bluetooth
+
+# Vold
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+BOARD_VOLD_MAX_PARTITIONS := 38
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # cat /proc/emmc:
 # dev: size erasesize name
@@ -58,3 +60,11 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # mmcblk0p30: 034ffa00 00000200 "reserve_2"
 # mmcblk0p32: 05fffc00 00000200 "reserve_3"
 # mmcblk0p29: 06069e00 00000200 "reserve"
+
+# Filesystem
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776704
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1946156032
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27917287424
+BOARD_FLASH_BLOCK_SIZE := 131072
