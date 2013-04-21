@@ -113,11 +113,6 @@ ro.baseband.arch = mdm
 #Add default network type for phone reference
 ro.telephony.default_network=9
 
-#
-#Simulate sdcard on /data/media
-#
-persist.fuse_sdcard=true
-
 # M7 Hardware Info
 ro.product.bluetooth=4.0
 ro.product.display_resolution = 4.7 inch 1080p resolution

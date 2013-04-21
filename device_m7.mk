@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES += \
     device/htc/m7/ramdisk/fstab.m7:root/fstab.m7 \
     device/htc/m7/ramdisk/init:root/init \
     device/htc/m7/ramdisk/init.m7.rc:root/init.m7.rc \
-    device/htc/m7/ramdisk/init.m7.usb.rc:root/init.m7.usb.rc \
+    device/htc/m7/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/m7/ramdisk/init.rc:root/init.rc \
     device/htc/m7/ramdisk/ueventd.m7.rc:root/ueventd.m7.rc \
 
@@ -38,11 +38,11 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
-    device/htc/msm8960-common/configs/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
-    device/htc/msm8960-common/configs/init.qcom.fm.sh:/system/etc/init.qcom.fm.sh \
-    device/htc/msm8960-common/configs/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
-    device/htc/msm8960-common/configs/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
-    device/htc/msm8960-common/configs/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
+    device/htc/m7/configs/init.qcom.bt.sh:/system/etc/init.qcom.bt.sh \
+    device/htc/m7/configs/init.qcom.fm.sh:/system/etc/init.qcom.fm.sh \
+    device/htc/m7/configs/init.qcom.post_boot.sh:/system/etc/init.qcom.post_boot.sh \
+    device/htc/m7/configs/init.qcom.sdio.sh:/system/etc/init.qcom.sdio.sh \
+    device/htc/m7/configs/init.qcom.wifi.sh:/system/etc/init.qcom.wifi.sh
 
 # Custom recovery charging
 PRODUCT_COPY_FILES += \
@@ -81,8 +81,12 @@ PRODUCT_COPY_FILES += \
     device/htc/m7/configs/AudioBTIDnew.csv:system/etc/AudioBTIDnew.csvs \
     device/htc/m7/configs/media_profiles.xml:system/etc/media_profiles.xml \
     device/htc/m7/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3
-	
+    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm:system/etc/snd_soc_msm/snd_soc_msm \
+    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
+    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm_2x_Fusion3:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm_2x_Fusion3_DMIC:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3_DMIC \
+    device/htc/m7/dsp/snd_soc_msm/snd_soc_msm_Sitar:system/etc/snd_soc_msm/snd_soc_msm_Sitar
+
 # Keylayouts and Keychars
 PRODUCT_COPY_FILES += \
     device/htc/m7/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
@@ -236,7 +240,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd \
     ro.telephony.ril_class=HTC8960RIL \
     ro.use_data_netmgrd=true \
-    wifi.interface=wlan0
+    wifi.interface=wlan0 \
+    dalvik.vm.dexopt-data-only=1
 
 # Set build date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

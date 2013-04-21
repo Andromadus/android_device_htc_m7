@@ -37,6 +37,54 @@
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
 
+    <integer-array name="config_autoBrightnessLevels">
+        <item>11</item>
+        <item>41</item>
+        <item>91</item>
+        <item>161</item>
+        <item>226</item>
+        <item>321</item>
+        <item>641</item>
+        <item>1281</item>
+        <item>2601</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>35</item>
+        <item>45</item>
+        <item>45</item>
+        <item>70</item>
+        <item>100</item>
+        <item>125</item>
+        <item>140</item>
+        <item>170</item>
+        <item>200</item>
+        <item>255</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessButtonBacklightValues">
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>255</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </integer-array>
+
     <!-- Needed for capacitive buttons to work without toggling auto-brightness. -->
     <!-- <bool name="config_autoBrightnessButtonKeyboard">false</bool -->
 
@@ -89,5 +137,5 @@
             16 - App switch
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
+    <integer name="config_deviceHardwareKeys">3</integer>
 </resources>
