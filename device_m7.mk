@@ -25,6 +25,7 @@ PRODUCT_COPY_FILES += \
     device/htc/m7/ramdisk/fstab.m7:root/fstab.m7 \
     device/htc/m7/ramdisk/init:root/init \
     device/htc/m7/ramdisk/init.m7.rc:root/init.m7.rc \
+    device/htc/m7/ramdisk/init.post_mount.sh:root/init.m7.rc \
     device/htc/m7/ramdisk/init.usb.rc:root/init.usb.rc \
     device/htc/m7/ramdisk/init.rc:root/init.rc \
     device/htc/m7/ramdisk/ueventd.m7.rc:root/ueventd.m7.rc \
@@ -60,7 +61,6 @@ PRODUCT_COPY_FILES += \
 
 # Wifi config
 PRODUCT_COPY_FILES += \
-    device/htc/m7/configs/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
     device/htc/m7/configs/calibration:/system/etc/calibration \
     device/htc/m7/configs/calibration_EMEA:/system/etc/calibration_EMEA	
 
