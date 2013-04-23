@@ -64,6 +64,9 @@ PRODUCT_COPY_FILES += \
     device/htc/m7/configs/calibration:/system/etc/calibration \
     device/htc/m7/configs/calibration_EMEA:/system/etc/calibration_EMEA	
 
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
 # Sound configs
 PRODUCT_COPY_FILES += \
     device/htc/m7/dsp/soundimage/srs_bypass.cfg:system/etc/soundimage/srs_bypass.cfg \
@@ -215,7 +218,7 @@ PRODUCT_COPY_FILES += \
     device/htc/m7/configs/gps.conf:system/etc/gps.conf
 	
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 	
 # Common build properties
 PRODUCT_PROPERTY_OVERRIDES += \
