@@ -26,9 +26,6 @@
 
 BOARD_VENDOR := htc
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := device/htc/m7/include
-
 # inherit from the proprietary version
 -include vendor/htc/m7/BoardConfigVendor.mk
 
